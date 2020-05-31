@@ -14,8 +14,8 @@ end = dt.datetime.now()
 #df = web.DataReader("RDSB.L", 'yahoo', start, end)
 
 # Writing and reading DataFrames
-#df.to_csv('RDSB.l.csv') # converts the dataframe to CSV
-df = pd.read_csv('RDSB.l.csv', parse_dates=True, index_col=0)
+#df.to_csv('RDSB.csv') # converts the dataframe to CSV
+df = pd.read_csv('RDSB.csv', parse_dates=True, index_col=0)
 #print(df.head())
 
 df[['Open','Close','High']].plot()
