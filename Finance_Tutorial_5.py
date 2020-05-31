@@ -11,7 +11,8 @@ def save_FTSE100_tickers():
     tickers = []
     for rows in table.find_all('tr')[1:]:
         ticker = rows.find_all('td')
-        tickers.append(ticker[1].text)
+        if not ticker[1].text == 'BT.A':
+            tickers.append(ticker[1].text)
     with open('FTSE100_Tickers.pickle', 'wb') as f:
         pickle.dump(tickers, f)
     print(tickers)
