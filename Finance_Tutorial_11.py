@@ -48,7 +48,7 @@ def extract_featuresets(ticker):
 
     df_vals = df[[ticker for ticker in tickers]].pct_change()
     df_vals = df_vals.replace([np.inf, -np.inf], np.nan)
-    df_vals.dropna(inplace=True)
+    df_vals.dropna(0, inplace=True)
 
     X = df_vals.values
     y = df['{}_target'.format(ticker)].values
